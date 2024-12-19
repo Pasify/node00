@@ -14,7 +14,10 @@ let currentTime = 0;
 
 const incrementTime = () => {
   currentTime += waitInterval;
-  process.stdout.write(`\n waiting ${currentTime / 1000} seconds`);
+  const p = Math.floor((currentTime / waitTime) * 100);
+  process.stdout.clearLine();
+  process.stdout.cursorTo(0);
+  process.stdout.write(`\n waiting... ${p} % `);
 };
 
 const interval = setInterval(incrementTime, waitInterval);
