@@ -15,5 +15,5 @@ process.stdin.on("data", (data) => {
     emitter.emit("customEvent", "GoodBye!", "process");
     process.exit();
   }
-  emitter.emit("customEvent", data.toString().trim(), "terminal");
+  emitter.emit("customEvent", input, "terminal");
 });
